@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<style type="text/css" >
+		.carousel-list-item{
+			float: left;
+			width: 100%;
+			overflow: hidden;
+			position: relative;
+		}
+		.item{
+			height: 200px;
+			float: left;
+			background: red;
+		}
+		.item-image{
+			width: 100%;
+			height: 150px;
+			background: blue;
+		}
+		.item-title{
+			width: 100%;
+			text-align: center;
+		}
+		.carousel-list-item-inner{
+			float:left;
+			transform: translateX(0px);
+			transition: 0.5s ease all;
+		}
+		#left-btn,
+		#right-btn{
+			position: absolute;
+			top: calc(50% - 20px);
+			background: #fff;
+			padding: 10px 18px;
+			border-radius: 25px;
+		}
+		#left-btn{
+			left: 0;
+		}
+		#right-btn{
+			right: 0;
+		}
+		#left-btn:before { 
+			content:"\003c";
+		}
+		#right-btn:before{
+			content:"\003e";
+		}
+	</style>
+</head>
+<body>
+
+
+	
+	<div class="container">
+				
+		<div class="row">
+			<div class="carousel-list-item" data-items="1,3,5,6" data-slide="1">
+				<div class="carousel-list-item-inner">
+					<div class="item">
+						<div class="item-image"></div>
+						<div class="item-title">Image</div>
+					</div>
+					<div class="item">
+						<div class="item-image"></div>
+						<div class="item-title">Image</div>
+					</div>
+					<div class="item">
+						<div class="item-image"></div>
+						<div class="item-title">Image</div>
+					</div>
+					<div class="item">
+						<div class="item-image"></div>
+						<div class="item-title">Image</div>
+					</div>
+					<div class="item">
+						<div class="item-image"></div>
+						<div class="item-title">Image</div>
+					</div>
+					<div class="item">
+						<div class="item-image"></div>
+						<div class="item-title">Image</div>
+					</div>
+					<div class="item">
+						<div class="item-image"></div>
+						<div class="item-title">Image</div>
+					</div>
+					<div class="item">
+						<div class="item-image"></div>
+						<div class="item-title">Image</div>
+					</div>
+					<div class="item">
+						<div class="item-image"></div>
+						<div class="item-title">Image</div>
+					</div>
+					<div class="item">
+						<div class="item-image"></div>
+						<div class="item-title">Image</div>
+					</div>
+					<div class="item">
+						<div class="item-image"></div>
+						<div class="item-title">Image</div>
+					</div>
+					<div class="item">
+						<div class="item-image"></div>
+						<div class="item-title">Image</div>
+					</div>
+					<div class="item">
+						<div class="item-image"></div>
+						<div class="item-title">Image</div>
+					</div>
+					
+				</div>
+				<div id="left-btn"></div>
+				<div id="right-btn"></div>
+			</div>
+		</div>
+
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" charset="utf-8" async defer>
+	window.onload = function(){
+		
+		resCarouselSize();
+
+		var itemWidth;
+		var objCarousel;
+		
+		function resCarouselSize(){
+			var width = 0;
+			var dataItems = $('.carousel-list-item').attr('data-items').split(',');
+			var bodyWidth = $('body').width();
+			var icno = 0;
+			var sampWidth = $('.carousel-list-item').width();
+			var itemNumbers = 0;
+			if (bodyWidth >= 1200) {
+                incno = dataItems[3];
+                itemWidth = sampWidth / incno;
+            }
+            else if (bodyWidth >= 992) {
+                incno = dataItems[2];
+                itemWidth = sampWidth / incno;
+            }
+            else if (bodyWidth >= 768) {
+                incno = dataItems[1];
+                itemWidth = sampWidth / incno;
+            }
+            else {
+                incno = dataItems[0];
+                itemWidth = sampWidth / incno;
+            }
+            $(".item").each(function(){
+				$(this).outerWidth(itemWidth);
+				itemNumbers++;
+			});
+			$(".carousel-list-item-inner").each(function(){
+				$(this).css('width',`${itemWidth * itemNumbers }px`);
+				objCarousel = $(this);
+
+			});
+
+			
+		}
+
+			$('#right-btn').on('click', function(){
+				
+				var values = objCarousel.css('transform').match(/-?[\d\.]+/g);
+				var xds = parseInt(values[4]);
+				objCarousel.css('transform',`translateX(${xds-itemWidth}px)`);
+				let itemNumbers = $('.item').length;
+				if(Math.abs(xds) == itemWidth * itemNumbers){
+					$('#right-btn').css('display','none');
+				}
+			});
+			$('#left-btn').on('click', function(){
+				
+				var values = objCarousel.css('transform').match(/-?[\d\.]+/g);
+				var xds = parseInt(values[4]);
+				objCarousel.css('transform',`translateX(${xds+itemWidth}px)`)
+			});
+
+		
+	}
+</script>
+</body>
+</html>

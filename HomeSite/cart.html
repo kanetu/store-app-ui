@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<!--Owl carousel -->
+	<link rel="stylesheet" href="assets_owl_carousel/owlcarousel/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets_owl_carousel/owlcarousel/assets/owl.theme.default.min.css">
+	<!--Extra margin padding -->
+	<link rel="stylesheet" type="text/css" href="css/extra-margin-padding.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style>
+	.cart-page-content{
+		min-height: 500px;
+	}
+	.cart-page-product-header{
+		background: #fff;
+		margin: 15px 0px;
+		padding: 15px 0px;
+	}
+	.product-cart{
+		margin: 15px 0;
+		padding: 15px 0;
+		background: #fff;
+		
+	}
+	.product-cart-detail{
+		display: flex;
+	}
+	.product-cart-image{
+		order: 1;
+		flex-basis: 30%;
+	}
+	.product-cart-image img{
+		width: 60px;
+		height: 50px;
+	}
+	.product-cart-name{
+		order: 2;
+		flex-basis: 100%;
+	}
+	.cart-page-product-section{
+		
+	}
+	.cart-page-product-section a{
+		text-decoration: none;
+	}
+	.cart-page-buy-section{
+		margin: 0;
+		padding: 15px 0;
+		justify-content: flex-end;
+		border-top: 1px solid rgba(0, 0, 0, 0.09);
+	}
+	.cart-pay-button{
+		margin: 0px 10px ;
+	}
+	.cart-pay-button a{
+		width: 100%;
+		padding: 10px 20px;
+		background: rgba(0, 0, 0, 0.5);
+		color: #fff;
+		text-decoration: none;
+		border-radius: 5px;
+		transition: .75s all ease;
+	}
+	.cart-pay-button a:hover{
+		background: rgba(0, 0, 0, 1);
+	}
+	.cart-cost-number{
+		color: #ff5722;
+	}
+</style>
+</head>
+<body>
+
+	<!-- Just an image -->
+	<nav class="navbar navbar-kane-color">
+		<div class="container container-custom">
+			<a class="navbar-brand logo" href="#">
+				<img src="img/logo-kane-store.png" alt="">
+			</a>
+			<form name="search-form" class="form-inline search-box">
+				<input class="form-control search-input" type="search" placeholder="Search on store" aria-label="Search">
+				<button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+			</form>
+			
+			<div class="account-link">
+				<img src="img/avatar.jpg" width="45" height="45" alt="">
+			</div>
+		</div>
+	</nav>
+	
+	<div class="container">
+		
+		<div class="cart-page-content">
+			
+			<div class="cart-page-product-header row">
+				<div class="col-md-7 col-lg-5 col-xl-5">Sản phẩm</div>
+				<div class="col-md-2 col-lg-2 col-xl-2">Đơn giá</div>
+				<div class="col-md-2 col-lg-2 col-xl-2">Số lượng</div>
+				<div class="col-md-2 col-lg-2 col-xl-2">Giá tiền</div>
+				<div class="col-md-1 col-lg-1 col-xl-1">Thao tác</div>
+			</div>
+
+			<div class="cart-page-product-section ">
+				<div class="product-cart row">
+					<div class="product-cart-detail col-md-7 col-lg-5 col-xl-5">
+
+						<div class="product-cart-image">
+							<img src="img/ao-phong.jpg" alt="">
+						</div>
+						<div class="product-cart-name">
+							<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
+						</div>
+					</div>
+					<div class="col-md-2 col-lg-2 col-xl-2">30.000 vnđ</div>
+					<div class="col-md-2 col-lg-2 col-xl-2">1</div>
+					<div class="col-md-2 col-lg-2 col-xl-2">30.000 vnđ</div>
+					<div class="col-md-1 col-lg-1 col-xl-1"><a href="#">Xóa</a></div>
+				</div>
+				<div class="product-cart row">
+					<div class="product-cart-detail col-md-7 col-lg-5 col-xl-5">
+
+						<div class="product-cart-image">
+							<img src="img/ao-phong.jpg" alt="">
+						</div>
+						<div class="product-cart-name">
+							<a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </a>
+						</div>
+					</div>
+					<div class="col-md-2 col-lg-2 col-xl-2">30.000 vnđ</div>
+					<div class="col-md-2 col-lg-2 col-xl-2">1</div>
+					<div class="col-md-2 col-lg-2 col-xl-2">30.000 vnđ</div>
+					<div class="col-md-1 col-lg-1 col-xl-1"><a href="#">Xóa</a></div>
+				</div>
+			</div>
+
+			<div class="cart-page-buy-section row">
+				<div class="cart-cost">
+					Tổng tiền:
+					<span class="cart-cost-number">30.000vnđ</span>
+				</div>
+				<div class="cart-pay-button">
+					<a href="#">Mua hàng</a>					
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<footer>
+		<div class="footer-top-block mt-20 mb-20 pt-20 overflow-h">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+						<h6 class="footer-title">Chính sách Mua hàng và Bảo hành</h6>
+						<a href="#" class="footer-link">Chính sách điện máy</a>
+						<a href="#" class="footer-link">Chính sách đổi hàng</a>
+						<a href="#" class="footer-link">Chính sách bảo hành</a>
+						<a href="#" class="footer-link">Chính sách thanh toán</a>
+						<a href="#" class="footer-link">Chính sách trả góp</a>
+						<a href="#" class="footer-link">Báo giá</a>
+					</div>
+					
+					<div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+						<h6 class="footer-title">Chính sách Mua hàng và Bảo hành</h6>
+						<a href="#" class="footer-link">Chính sách điện máy</a>
+						<a href="#" class="footer-link">Chính sách đổi hàng</a>
+						<a href="#" class="footer-link">Chính sách bảo hành</a>
+						<a href="#" class="footer-link">Chính sách thanh toán</a>
+						<a href="#" class="footer-link">Chính sách trả góp</a>
+						<a href="#" class="footer-link">Báo giá</a>
+					</div>
+					<div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+						<h6 class="footer-title">Thông tin KaneStore</h6>
+						<a href="#" class="footer-link">Thông tin liên hệ</a>
+						<a href="#" class="footer-link">Giới thiệu</a>
+						<a href="#" class="footer-link">Hỏi đáp</a>
+						<a href="#" class="footer-link">Tin công nghệ</a>
+						<a href="#" class="footer-link">Tuyển dụng</a>
+					</div>
+					<div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+						<a href="#" class="footer-link"><img src="img/da-dang-ky.png" alt="" class="img-fluid"></a>
+						<div class="footer-mail-section">
+							<span>Liên hệ Hợp tác và Mua hàng:</span>
+							<a class="footer-link" href="mailto:contact@kanstore.vn">contact@kanstore.vn</a>
+						</div>
+						<div class="footer-mail-section">
+							<span>Liên hệ Hợp tác và Mua hàng:</span>
+							<a class="footer-link" href="mailto:contact@kanstore.vn">contact@kanstore.vn</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+						<div class="footer-banking-block mt-20 mb-20">
+							<h6>Danh sách các ngân hàng thanh toán online</h6>
+							<img src="img/banklist.jpg" class="img-fluid" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bottom-block ">
+			<div class="container">	
+				<div class="row">
+					<div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+						<h3 class="footer-company-title">CÔNG TY CỔ PHẦN THƯƠNG MẠI DỊCH VỤ kanestore</h3>&copy2007 - 2018 Công Ty Cổ Phần Thương Mại - Dịch Vụ KaneStore / GPĐKKD số 0304998358 do Sở KHĐT TP.HCM cấp
+
+					</div>
+					<div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 footer-address-block">
+						<div class="footer-address-section">
+							<span>Văn phòng điều hành miền Bắc:</span> Tầng 6, Số 1 Phố Thái Hà, Phường Trung Liệt, Quân Đống Đa, Hà Nội
+						</div>
+						<div class="footer-address-section">
+							<span>Văn phòng điều hành miền Nam:</span> Tầng 7, tòa nhà số 198 Nguyễn Thị Minh Khai, Phường 6, Quận 3, TP. Hồ Chí Minh
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Owl-carousel-javascript -->
+	<script src="assets_owl_carousel/vendors/jquery.min.js"></script>
+	<script src="assets_owl_carousel/owlcarousel/owl.carousel.js"></script>
+	<!-- Bootstrap 4-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="js/script.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script>
+		$('#owl-example').owlCarousel({
+			items: 4,
+			margin: 10,
+			autoWidth:true,
+			responsive: {
+				600: {
+					items: 4
+				}
+			}
+		});
+	</script>
+</body>
+</html>

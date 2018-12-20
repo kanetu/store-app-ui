@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<style type="text/css" >
+	ul.dropdown-custom{
+		width: 100%;
+		background: #f8f8f8;
+		padding: 0;
+		position: relative;
+	}
+	ul.dropdown-custom ul{
+		padding: 0;
+		margin: 0;
+	}
+	.dropdown-custom li{
+		padding: 10px 40px;
+		border-top: 1px solid #fff;
+	}
+	.dropdown-custom li:hover{
+		background: rgba(0, 0, 0, 0.1);
+		transition: 0.75s all ease;
+
+	}
+	.dropdown-custom a{
+		text-decoration: none;
+	}
+	.dropdown-button{
+		padding: 15px 20px;
+		width: 100%;
+		cursor: pointer;
+	}
+	.show-dropdown{
+		top: 100% !important;
+	}
+	.hide-dropdown{
+		top: -15em !important;
+	}
+	.group-item{
+		transition: 0.75s all ease;
+		position: absolute;
+		width: 100%;
+		background: #f8f8f8;
+		top: -15em;
+		z-index: -1;
+	}
+	
+	.arrow{
+		display: inline-block;
+		position: absolute;
+		top: 10px;
+		right: 20px;
+		font-style: initial;
+		font-size: 20px;
+	   	font-weight: 900;
+	   	transition: 1s all ease;
+	}
+	.arrow:before{
+		font-family: "Font Awesome 5 Free";
+		content: "\f107";
+		
+	}
+
+</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+
+			<div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+				<ul class="dropdown-custom"  id="dropdown-1">
+					<h6 class="dropdown-button" id="btn-dropdown-1" onclick='turnDropdown(this)'>Cổng thông tin điện tử</h6><i class='arrow'></i>
+					<ul class="group-item">
+						<a href="#"><li class="dropdown-item">Item1</li></a>
+						<a href="#"><li class="dropdown-item">Item1</li></a>
+						<a href="#"><li class="dropdown-item">Item1</li></a>
+						<a href="#"><li class="dropdown-item">Item1</li></a>
+						<a href="#"><li class="dropdown-item">Item1</li></a>
+					</ul>
+				</ul>
+			</div>
+			
+			<div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+				<ul class="dropdown-custom"  id="dropdown-2">
+					<h6 class="dropdown-button" id="btn-dropdown-2" onclick='turnDropdown(this)'>Cổng thông tin điện tử</h6><i class="arrow test"></i>
+					<ul class="group-item">
+						<a href="#"><li class="dropdown-item">Item1</li></a>
+						<a href="#"><li class="dropdown-item">Item1</li></a>
+						<a href="#"><li class="dropdown-item">Item1</li></a>
+						<a href="#"><li class="dropdown-item">Item1</li></a>
+						<a href="#"><li class="dropdown-item">Item1</li></a>
+					</ul>
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script type="text/javascript" charset="utf-8" async defer>
+		function turnDropdown(btn){
+				var btnId =	$(btn).attr('id');
+				var parentId = $(btn).parent().attr('id');
+
+				if($(btn).hasClass('active-dropdown')){
+						$(btn).removeClass('active-dropdown');
+						$('#'+ parentId +' .group-item').each(function(){
+							$(this).addClass('hide-dropdown');
+							$(this).removeClass('show-dropdown');
+						});
+						$('#'+ parentId +' .arrow').css('transform','rotateZ(0deg)');
+					}else{
+						$(btn).addClass('active-dropdown');
+						$('#'+ parentId +' .group-item').each(function(){
+							$(this).addClass('show-dropdown');
+							$(this).removeClass('hide-dropdown');
+						})
+						$('#'+ parentId +' .arrow').css("transform","rotateZ(540deg)");
+
+					}
+			}
+	</script>
+</body>
+</html>
+
